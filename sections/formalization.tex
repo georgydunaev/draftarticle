@@ -1,0 +1,55 @@
+\section{Formalization of Mathematical Foundations}
+\label{sec:formalization}
+
+\subsection{Propositional Logic}
+\label{subsec:prop_logic}
+
+We consider both computational Boolean models and axiomatic deductive formulations \cite{vereshchagin2002lectures}. Within Coq, Boolean connectives admit direct reflection into inductive propositions:
+\begin{align}
+\mathrm{andb}(A, B) &\coloneqq A \mathbin{\&\&} B, \\
+\mathrm{orb}(A, B)  &\coloneqq A \mathbin{||} B, \\
+\mathrm{negb}(A)     &\coloneqq \lnot_{\mathrm{bool}} A.
+\end{align}
+In the native constructive logic $\mathrm{Prop}$, conjunction and disjunction are encoded via inductive types with standard introduction and elimination rules:
+\begin{align}
+\mathrm{prop\_and}(A, B) &\coloneqq A \land B, \\
+\mathrm{prop\_or}(A, B)  &\coloneqq A \lor B, \\
+\mathrm{prop\_not}(A)    &\coloneqq A \to \bot.
+\end{align}
+
+\subsection{Deductive Rules and Semantics}
+\label{subsec:semantics}
+
+Table~\ref{tab:logic_connectives} summarizes the correspondence between the object-level logic and its Gallina representation. Modern table formatting adheres to \texttt{booktabs} guidelines without vertical rules.
+
+\begin{table}[htbp]
+\centering
+\caption{Correspondence between object logic connectives and Coq representations}
+\label{tab:logic_connectives}
+\begin{tabular}{llll}
+\toprule
+\textbf{Connective} & \textbf{Symbol} & \textbf{Boolean Reflection} & \textbf{Gallina Type} \\
+\midrule
+Conjunction & $A \land B$ & \texttt{A \&\& B} & \texttt{A /\textbackslash{} B : Prop} \\
+Disjunction & $A \lor B$ & \texttt{A || B} & \texttt{A \textbackslash{}/ B : Prop} \\
+Negation    & $\lnot A$ & \texttt{negb A} & \texttt{\textasciitilde{}A : Prop} \\
+Implication & $A \to B$ & \texttt{negb A || B} & \texttt{A -> B : Prop} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Predicate Logic and Quantifiers}
+\label{subsec:pred_logic}
+
+First-order predicate logic extends the propositional language with sorts, function symbols, predicates, and quantifiers:
+\begin{equation}
+\label{eq:quantifiers}
+\forall x \colon \mathcal{D},\; P(x) \quad\text{and}\quad \exists x \colon \mathcal{D},\; P(x).
+\end{equation}
+Key distributivity and duality properties are mechanically verified in Coq \cite{krupski2019coq}:
+\begin{align}
+(\forall x,\; P(x) \land Q(x)) &\iff (\forall x,\; P(x)) \land (\forall x,\; Q(x)), \\
+(\exists x,\; P(x) \lor Q(x))  &\iff (\exists x,\; P(x)) \lor (\exists x,\; Q(x)), \\
+\lnot (\exists x,\; P(x))       &\iff (\forall x,\; \lnot P(x)).
+\end{align}
+These tautologies ensure sound interpretation across classical and Kripke semantic structures.

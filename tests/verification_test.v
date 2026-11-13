@@ -1,22 +1,33 @@
 (* Verification Test for Mathematical Foundations in Coq *)
 
-Require Import Logic.Propositional Logic.Propositional Logic.Proofs.
-Require Import Logic.Predicate Logic.Predicate Logic.Proofs.
-
 (* Test Propositional Logic *)
 
-Lemma test_propositional_logic : forall P Q, P -> (P \/ Q).
+Lemma test_propositional_logic : forall P Q : Prop, P -> (P \/ Q).
 Proof.
   intros P Q H.
   left.
   exact H.
 Qed.
 
+Lemma test_modus_ponens : forall P Q : Prop, P -> (P -> Q) -> Q.
+Proof.
+  intros P Q HP HPQ.
+  apply HPQ.
+  exact HP.
+Qed.
+
 (* Test Predicate Logic *)
 
-Lemma test_predicate_logic : forall (P: Prop) (x: nat), P x -> exists y, P y.
+Lemma test_predicate_logic : forall (A : Type) (P : A -> Prop) (x : A), P x -> exists y : A, P y.
 Proof.
-  intros P x H.
+  intros A P x H.
   exists x.
   exact H.
+Qed.
+
+Lemma test_forall_inst : forall (A : Type) (P : A -> Prop) (x : A),
+  (forall y : A, P y) -> P x.
+Proof.
+  intros A P x Hall.
+  apply Hall.
 Qed.

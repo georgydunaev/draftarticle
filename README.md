@@ -6,44 +6,39 @@ This repository contains the implementation of mathematical foundations in the C
 
 The repository is organized as follows:
 
-1. **Technical Report**:
-   - `technical_report.md`: Detailed report on the implementation of mathematical foundations in Coq
-   - `technical_report.pdf`: PDF version of the technical report
+1. **Research Paper Draft**:
+   - `main.tex`: Master LaTeX document incorporating modern typography, geometry, math, and table packages.
+   - `sections/abstract.tex`: Abstract covering propositional and predicate logic formalization in Coq.
+   - `sections/introduction.tex`: Motivation, interactive theorem proving context, and related foundations.
+   - `sections/formalization.tex`: Formalization of propositional and predicate logic, Boolean reflection, semantics, and Coq inductive models.
+   - `sections/conclusion.tex`: Summary of results and future directions in axiomatic set theories.
+   - `references.bib`: Standardized BibTeX bibliography with uniform keys.
+   - `technical_report.md`: Detailed report on the implementation of mathematical foundations in Coq.
+   - `technical_report.pdf`: PDF version of the technical report (immutable reference artifact).
 
 2. **Source Code**:
-   - `src/logic.v`: Main logic implementation file
-   - `src/logic/coq/PropositionalLogic.v`: Coq implementation of propositional logic
-   - `src/logic/coq/PredicateLogic.v`: Coq implementation of predicate logic
+   - `src/logic.v`: Main logic implementation file.
+   - `src/logic/coq/PropositionalLogic.v`: Coq implementation of propositional logic in `Prop`.
+   - `src/logic/coq/PredicateLogic.v`: Coq implementation of predicate logic quantifiers and tautologies.
 
 3. **Examples**:
-   - `examples/propositional_logic_example1.v`: Example of propositional logic in Coq
-   - `examples/propositional_logic_example2.v`: Another example of propositional logic
-   - `examples/predicate_logic_example1.v`: Example of predicate logic in Coq
+   - `examples/propositional_logic_example1.v`: Example of propositional logic operators in Coq.
+   - `examples/propositional_logic_example2.v`: Complex propositional logic expressions in Coq.
+   - `examples/predicate_logic_example1.v`: Example of predicate logic and quantifiers in Coq.
 
 4. **Tests**:
-   - `tests/verification_test.v`: Main verification test file
-   - `tests/test_logic.v`: Additional logic test file
+   - `tests/test_draftarticle.py`: Automated Python unit test suite verifying artifacts, modular LaTeX sections, BibTeX keys, deprecated package absence, and Coq compilation.
+   - `tests/verification_test.v`: Main verification test file.
+   - `tests/test_logic.v`: Additional logic test file.
+   - `tests/new_verification_test.v`: Boolean and predicate logic verification test.
 
-5. **Verification**:
-   - `VerificationTest.v`: Additional verification test file
-   - `example.v`: Example verification file
+5. **Root Verification**:
+   - `VerificationTest.v`: Root verification test file.
+   - `example.v`: Verification example file.
 
 6. **Tickets**:
-   - Directory containing various tickets related to the codebase
-
-1. **Technical Report**: A detailed report on the implementation of mathematical foundations in Coq, covering propositional logic and predicate logic.
-2. **Tickets**: A directory containing tickets related to the codebase.
-3. **Verification Test**: A test file to verify the implementation of mathematical foundations in Coq.
-4. **Examples**: Example files demonstrating the usage of the implemented mathematical foundations.
+   - `tickets/`: Directory containing project tracking tickets.
 
 ## Purpose
 
 The purpose of this repository is to provide a formal implementation of mathematical foundations in the Coq proof assistant. The report details the axioms, models, and proofs for propositional and predicate logic in Coq.
-
-## Author
-
-- **Author**: openrouter/free-qwen-coder-32b (Capability Tier 2)
-
-## Model Identity
-
-- **Model**: mistral/mistral-medium-latest (Capability Tier 1)

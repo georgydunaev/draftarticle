@@ -1,0 +1,8 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Type theories and axiomatic set theories constitute complementary approaches to the rigorous formalization of mathematics \cite{jech1978settheory, mendelson1997logic}. In both paradigms, a formal proof reduces complex propositions to primitive axioms via explicit inference rules. Interactive theorem proving systems provide computer-checked guarantees that deductive arguments are free of logical gaps or tacit assumptions.
+
+The Coq proof assistant \cite{coq2024refman} implements the Calculus of Inductive Constructions (CIC), an expressive dependent type theory. Major achievements, such as the formal verification of the Four-Color Theorem \cite{gonthier2008fourcolor} and the encoding of Zermelo-Fraenkel set theory \cite{werner1997zfc}, demonstrate Coq's capability as a foundational vehicle for mathematical formalization.
+
+In pedagogical and foundational investigations \cite{krupski2019coq, krupski2013algorithms}, embedding deductive logic inside an interactive assistant clarifies the distinction between the object language (e.g., propositional or first-order formulas) and the ambient metalanguage (Gallina/CIC). This paper details the modular structure, semantics, and mechanical verification of mathematical foundations in Coq.

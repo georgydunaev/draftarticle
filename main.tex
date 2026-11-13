@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+
+% Modern page geometry (replaces deprecated a4wide)
+\usepackage[a4paper,margin=1in]{geometry}
+
+% Modern encoding and font configuration (replaces obsolete times / palatino / t1enc)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Modern mathematics packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Modern table packages (replaces obsolete table hacks)
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Modern typography and bibliography
+\usepackage[expansion=false]{microtype}
+\usepackage{cite}
+
+% Modern hyperref configuration
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfauthor={Georgy Dunaev},
+    pdftitle={Implementation of Mathematical Foundations in Coq}
+}
+
+% Clean macro definitions
+\newcommand*{\Gallina}{\textsc{Gallina}}
+\newcommand*{\Coq}{\textsc{Coq}}
+\newcommand*{\propSort}{\ensuremath{\mathrm{Prop}}}
+\newcommand*{\boolSort}{\ensuremath{\mathrm{bool}}}
+
+\title{Implementation of Mathematical Foundations in Coq}
+\author{Georgy Dunaev}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+
+\input{sections/introduction}
+
+\input{sections/formalization}
+
+\input{sections/conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
